@@ -5,8 +5,6 @@ import digitalocean
 import paramiko
 import requests
 
-manager = digitalocean.Manager(token="fbc8b80bf5f1a1f6301ae9e2ca677f1a1742e53f968f0f0ff7c4d3e23cb9f556")
-
 ############################ Misc  info ############################
 identifier = 'IDENTIFIER FOR WHMCS'
 secret = 'WHMCS SECRET'
@@ -17,6 +15,7 @@ theme_url = 'https://aguilaair.tech/theme.zip'
 theme_name = 'theme.zip'
 ####################################################################
 
+manager = digitalocean.Manager(token=DOtoken)
 
 def generateurl(actions):
     urlbuilt = url + '?action=' + actions + "&username=" + identifier + '&password=' + secret + '&responsetype=json'
